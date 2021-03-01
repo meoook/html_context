@@ -46,6 +46,6 @@ for item in list_of_items:
 
 | version | date     | changes                                                            |
 | ------- | -------- | ------------------------------------------------------------------ |
-| 0.01.01 | 02.03.21 | Realise                                                            |
+| 0.01.01 | 02.03.21 | Release                                                            |
 
 [author]: <https://bazha.ru> "meok home page"
