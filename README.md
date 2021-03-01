@@ -5,6 +5,8 @@
 * Author: [meok][author]
 * Depends: no (native)
 
+## Inside package
+
 - [x] Parse HTML or HTML templates documents
 - [ ] Add more templates variants for normal parse
 - [x] Get **useful text** text from tags
@@ -46,6 +48,7 @@ for item in list_of_items:
 
 | version | date     | changes                                                            |
 | ------- | -------- | ------------------------------------------------------------------ |
+| 0.01.02 |     *    | Return values to ABS data types                                    |
 | 0.01.01 | 02.03.21 | Realise                                                            |
 
 [author]: <https://bazha.ru> "meok home page"
