@@ -1,20 +1,11 @@
 import re
 
 
-# TODO: change setting options, data
-# TODO: change getting data
-
 class HtmlContextParser:
     """
-        Control text data (*valid*) in HTML document
+        Control *valid* text data in HTML document
         Options:
-            set TAG_PARAMS and TAG_PARAMS_DEFAULT to set what tag parameters to parse
-        Example:
-            tags_params = {'button': {'value', }, }
-            tags_default = {'tooltip', }
-            parser = HtmlContextParser(tags_params, tags_default)
-            parser.data = <decoded_file_content>
-            <result> = parser.data
+          set TAG_PARAMS and TAG_PARAMS_DEFAULT to parse tag parameters for *valid* text
     """
 
     __INVALID_DATA_TAGS: set[str] = {'script', 'style'}
@@ -194,7 +185,8 @@ class HtmlContextParser:
             if self.__left_data.startswith('<'):
                 self.__warnings.append(f'wrong parameter value in tag {tag_name}')
                 self.__cut_or_eof('>')
-            elif not ignore_params and param_name in self.__TAGS_PARAMS_DEFAULT or tag_name in self.__TAGS_PARAMS.keys() and param_name in self.__TAGS_PARAMS[tag_name]:
+            elif not ignore_params and param_name in self.__TAGS_PARAMS_DEFAULT or \
+                    tag_name in self.__TAGS_PARAMS.keys() and param_name in self.__TAGS_PARAMS[tag_name]:
                 # cut quote and invisible symbols at start
                 _cut_idx = _value.start(1)
                 self.__cut_to_elem_prefix(_cut_idx)
