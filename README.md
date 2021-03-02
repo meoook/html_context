@@ -31,7 +31,7 @@ elements_tree = parser.tree
 # {'dom': '2:div:1', 'text': 'Test', 'prefix': '</div><div>', 'warning': ''}
 # {'dom': '2:div:1:div:1', 'text': 'data', 'prefix': '<div>', 'warning': ''}
 # {'dom': '2:div:2', 'text': 'last', 'prefix': '</div>', 'warning': ''}
-# {'dom': 'EOF', 'text': '</div>', 'prefix': '</div>', 'warning': 'end of file'}
+# {'dom': 'EOF', 'text': '', 'prefix': '</div>', 'warning': 'end of file'}
 
 print(elements_tree)
 # ['1:div:1', '2:div:1', '2:div:1:div:1', '2:div:2']
@@ -41,7 +41,7 @@ list_of_items[0]['text'] = 'Updated text'
 # Build updated html file with new context but original structure
 for item in list_of_items:
     print(f'{item["prefix"]}{item["text"]}', end='')  # change on file.write()
-# <div>Updated text</div><div>Test<div>data</div>last</div></div>
+# <div>Updated text</div><div>Test<div>data</div>last</div>
 ```
 
 # Release notes

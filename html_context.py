@@ -245,7 +245,7 @@ class HtmlContextParser:
         if not self.__left_data:  # no more data to parse
             if self.__dom_data and self.__dom_data[-1]['dom'] != 'EOF':
                 _prefix = self.__elem_prefix_return(0)
-                _data_tail = {'dom': 'EOF', 'text': _prefix, 'prefix': _prefix, 'warning': 'end of file'}
+                _data_tail = {'dom': 'EOF', 'text': '', 'prefix': _prefix, 'warning': 'end of file'}
                 self.__dom_data.append(_data_tail)  # Add left data to return data as 'EOF'
             return True
         return False
